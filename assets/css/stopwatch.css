@@ -1,0 +1,10 @@
+.stopwatchNav {
+    background-color: #003b46;
+}
+
+.stopwatch {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
