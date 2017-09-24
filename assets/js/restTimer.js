@@ -62,7 +62,7 @@ var restTimerApp = function(p5) {
 
     function drawTimer(timerStartY, restProgression, transparency) {
         p5.fill(0, 59, 70, transparency);
-        p5.stroke(0, 59, 70, transparency);
+        p5.noStroke();
         p5.rect(0, timerStartY + restProgression, p5.width, p5.height - timerStartY);
     }
 }
