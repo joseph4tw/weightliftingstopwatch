@@ -19,20 +19,36 @@
             </a>
         </nav>
         <div class="container">
-            <div class="row justify-content-center align-items-center">
+            <!-- <div class="row justify-content-center align-items-center">
                 <div class="col">
                     <div align="center">
-                        <!-- WeightLiftingStopwatchTop -->
                         <ins class="adsbygoogle"
                             style="display:inline-block;width:728px;height:90px"
                             data-ad-client="ca-pub-4284296425338977"
                             data-ad-slot="2789466753"></ins>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <div class="row justify-content-center align-items-center">
-                <div class="col">
-                        <div class="stopwatch" id="stopwatch"></div>
+                <div class="col-12 col-md-5">
+                    <div class="stopwatch" id="stopwatch"></div>
+                </div>
+                <div class="col-12 col-md-3">
+                    <p>
+                        <a role="button" id="start" class="btn btn-primary" href="#">Start</a>
+                        <a role="button" id="stop" class="btn btn-danger" href="#">Stop</a>
+                        <a role="button" id="rest" class="btn btn-success" href="#">Rest</a>
+                    </p>
+                    <p>
+                        <form class="form-inline">
+                            <label for="restTimer">Rest Time</label>
+                            <input type="number" class="form-control" id="restInput" placeholder="Rest Time in Seconds">
+                            <small id="restTimerHelp" class="form-text text-muted">Press Spacebar to begin the rest timer.</small>
+                        </form>
+                    </p>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div id="restTimer"></div>
                 </div>
             </div>
             <div class="row justify-content-center align-items-center">
@@ -56,7 +72,12 @@
         <script src="./assets/js/p5.dom.js"></script>
         <script src="./assets/js/p5.sound.js"></script>
         <script src="./assets/js/stopwatch.js"></script>
+        <script src="./assets/js/restTimer.js"></script>
         <!-- End P5 -->
+
+        <!-- Other -->
+        <script src="./assets/js/keyboardOverride.js"></script>
+        <!-- End Other -->
 
         <!-- AdSense -->
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
