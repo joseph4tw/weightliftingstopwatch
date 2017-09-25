@@ -18,9 +18,9 @@ var stopwatchApp = function(p5) {
     stopButton.click(function() {
         isStopwatchRunning = false;
     });
-    
+
     p5.setup = function() {
-        p5.createCanvas(400, 400);
+        p5.createCanvas(327, 327);
         p5.angleMode(p5.DEGREES);
     }
     
@@ -31,9 +31,13 @@ var stopwatchApp = function(p5) {
         if (!isStopwatchRunning) {
             // show stopped stopwatch
             drawStoppedStopwatch();
-            return;
         }
-    
+        else {
+            drawRunningStopwatch();
+        }
+    }
+
+    function drawRunningStopwatch() {
         let totalMilliseconds = p5.millis() - initialMilliseconds;
         let totalSeconds = totalMilliseconds / 1000;
         let totalMinutes = totalSeconds / 60;
@@ -78,21 +82,21 @@ var stopwatchApp = function(p5) {
         p5.noFill();
         p5.stroke(millisecondColor);
         p5.strokeWeight(6);
-        p5.arc(200, 200, 280, 280, 0, milliSecondsAngle);
+        p5.arc(p5.width / 2, p5.height / 2, 280, 280, 0, milliSecondsAngle);
     }
     
     function drawSeconds(secondsAngle) {
         p5.noFill();
         p5.stroke(secondColor);
         p5.strokeWeight(6);
-        p5.arc(200, 200, 300, 300, 0, secondsAngle);
+        p5.arc(p5.width / 2, p5.height / 2, 300, 300, 0, secondsAngle);
     }
     
     function drawMinutes(minutesAngle) {
         p5.noFill();
         p5.stroke(minuteColor);
         p5.strokeWeight(6);
-        p5.arc(200, 200, 320, 320, 0, minutesAngle);
+        p5.arc(p5.width / 2, p5.height / 2, 320, 320, 0, minutesAngle);
     }
 }
 

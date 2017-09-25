@@ -8,3 +8,10 @@
     justify-content: center;
     align-items: center;
 }
+
+.restTimer {
+    margin: 7px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
