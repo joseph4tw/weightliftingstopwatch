@@ -31,7 +31,7 @@
                         <a role="button" id="rest" class="btn btn-success" href="#">Rest</a>
                     </p>
                     <p>
-                        <form class="form-inline">
+                        <form class="form-inline" onsubmit="$('#rest').trigger('click'); return false;">
                             <label for="restTimer">Rest Time (seconds)</label>
                             <input type="number" class="form-control" id="restInput" placeholder="Rest Time in Seconds">
                             <small id="restTimerHelp" class="form-text text-muted">Press Spacebar to begin the rest timer.</small>
