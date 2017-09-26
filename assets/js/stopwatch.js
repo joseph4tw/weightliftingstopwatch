@@ -29,7 +29,6 @@ var stopwatchApp = function(p5) {
         p5.background(0, 0);
     
         if (!isStopwatchRunning) {
-            // show stopped stopwatch
             drawStoppedStopwatch();
         }
         else {
