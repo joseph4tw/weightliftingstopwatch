@@ -2,6 +2,8 @@
 
 This is a stopwatch made for weightlifters.
 
+https://weightliftingstopwatch.azurewebsites.net
+
 ## Why make this app?
 
 Whenever I workout, I usually have a stopwatch going on my laptop. I 
