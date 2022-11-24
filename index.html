@@ -1,101 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="./assets/css/stopwatch.css">
-        <link rel="stylesheet" type="text/css" href="./assets/css/navbar.css">
-        <link rel="icon" href="./assets/images/favicon.png">
-        <title>Weightlifting Stopwatch</title>
-    </head>
-    <body>
-        <nav class="navbar navbar-dark stopwatchNav">
-            <a class="navbar-brand" href="#">
-                <img src="/assets/images/favicon.png" width="30" height="30" class="d-inline-block align-top" alt="">
-                Weightlifting Stopwatch
-            </a>
-        </nav>
-        <div class="container">
-            <div class="row justify-content-center align-items-center">
-                <div class="col-12 col-md-5">
-                    <div class="stopwatch" id="stopwatch"></div>
-                    <div class="restTimer" id="restTimer"></div>
-                </div>
-                <div class="col-12 col-md-3">
-                    <p>
-                        
-                    </p>
-                    <p>
-                        <form class="form" onsubmit="$('#rest').trigger('click'); return false;">
-                            <div class="form-group row align-items-left">
-                                <button type="button" id="start" class="btn btn-primary btn-block">Start</button>
-                                <button type="button" id="stop" class="btn btn-danger btn-block">Stop</button>
-                                <button type="button" id="rest" class="btn btn-success btn-block">Rest</button>
-                            </div>
-                            <div class="form-group row">
-                                <label for="restTimer">Rest Time (seconds)</label>
-                                <input type="number" class="form-control" id="restInput" placeholder="Rest Time in Seconds" value="60">
-                                <small id="restTimerHelp" class="form-text text-muted">Press Spacebar to begin the rest timer.</small>
-                            </div>
-                            <div class="form-check row">
-                                <label class="form-check-label">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./assets/css/stopwatch.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/navbar.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/footer.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="./assets/images/favicon.png">
+    <title>Weightlifting Stopwatch</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="/assets/images/favicon.png" width="30" height="30" class="d-inline-block align-top" alt="">
+            Weightlifting Stopwatch
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <a class="nav-link" href="#about">About</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-12 col-md-5">
+                <div class="stopwatch" id="stopwatch"></div>
+                <div class="restTimer" id="restTimer"></div>
+            </div>
+            <div class="col-12 col-md-3">
+                <p>
+
+                </p>
+                <p>
+                    <form class="form" onsubmit="$('#rest').trigger('click'); return false;">
+                        <div class="form-group row align-items-left">
+                            <button type="button" id="start" class="btn btn-primary btn-lg btn-block">Start</button>
+                            <button type="button" id="stop" class="btn btn-danger btn-lg btn-block">Stop</button>
+                            <button type="button" id="rest" class="btn btn-success btn-lg btn-block">Rest</button>
+                        </div>
+                        <div class="form-group row">
+                            <label for="restTimer">Rest Time (seconds)</label>
+                            <input type="number" class="form-control" id="restInput" placeholder="Rest Time in Seconds" value="60">
+                            <small id="restTimerHelp" class="form-text text-muted">Press Spacebar to begin the rest timer.</small>
+                        </div>
+                        <div class="form-check row">
+                            <label class="form-check-label">
                                   <input class="form-check-input" type="checkbox" id="playSounds" checked="checked"> Play Sounds
                                 </label>
-                              </div>
-                        </form>
-                    </p>
-                </div>
+                        </div>
+                    </form>
+                </p>
             </div>
-            <div class="row justify-content-center align-items-center">
-                <div class="col">
-                    <div align="center">
-                        <ins class="adsbygoogle"
-                            style="display:block; text-align:center;"
-                            data-ad-layout="in-article"
-                            data-ad-format="fluid"
-                            data-ad-client="ca-pub-4284296425338977"
-                            data-ad-slot="2683926484"></ins>
+        </div>
+        <hr />
+        <div class="row justify-content-center align-items-center">
+            <div class="col">
+                <h2 id="about">
+                    About<br />
+                    <small class="text-muted">What's this stopwatch for?</small>
+                </h2>
+                <p>
+                    Weightlifting Stopwatch was developed to help:
+                    <ul>
+                        <li>Track overall workout time</li>
+                        <li>Give a visual / audible queue for your rest periods</li>
+                    </ul>
+                </p>
+                <p>
+                    My biggest issue with using a regular stopwatch was that when I finished my set, I had
+                    to remember what time it was so that I knew when I needed to start up my next set.
+                    It got annoying to remember and keep watching the clock so I decided to make this simple app.
+                </p>
+                <p>
+                    This is actually inspired by <a href="https://www.muscleforlife.com/about-me/" target="_blank">Michael Matthew's</a>
+                    <a href="http://amzn.to/2fGxMwg" target="_blank">Bigger Leaner Stronger</a> workouts since the rest
+                    periods are longer than what I'm used to. So far this stopwatch / rest timer combo has been a great help.
+                </p>
+                <p>
+                    If you're curious about the workout program, click the book image.
+                </p>
+                <p>
+                    <small>
+                        Pleas note, I'm not affiliated with Michael Matthews or any of his businesses;
+                        I'm just a fan who made an app based on one of his products.
+                    </small>
+                </p>
+            </div>
+            <div class="col-md-auto">
+                <a href="http://amzn.to/2fGxMwg" target="_blank"><img src="/assets/images/bigger_leaner_stronger.jpg" width="200px"></a>
+                <br />
+                <small class="text-muted">(Weightlifting Stopwatch inspired by BLS)</small>
+            </div>
+        </div>
+    </div>
+
+    <footer class="mt-5">
+        <div class="container-fluid bg-primary py-3">
+            <div class="container">
+                <div class="row py-3">
+                    <div class="col-md-12">
+                        <p>&copy; 2017 Weightlifting Stopwatch</p>
+                        <p><a href="#">Back to Top</a></p>
                     </div>
                 </div>
             </div>
         </div>
+    </footer>
 
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
-        <!-- P5 -->
-        <script src="./assets/js/p5.js"></script>
-        <script src="./assets/js/p5.dom.js"></script>
-        <script src="./assets/js/p5.sound.js"></script>
-        <script src="./assets/js/stopwatch.js"></script>
-        <script src="./assets/js/restTimer.js"></script>
-        <!-- End P5 -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
+        crossorigin="anonymous"></script>
+    <!-- P5 -->
+    <script src="./assets/js/p5.js"></script>
+    <script src="./assets/js/p5.dom.js"></script>
+    <script src="./assets/js/p5.sound.js"></script>
+    <script src="./assets/js/timerSound.js"></script>
+    <script src="./assets/js/stopwatch.js"></script>
+    <script src="./assets/js/restTimer.js"></script>
+    <!-- End P5 -->
 
-        <!-- Other -->
-        <script src="./assets/js/keyboardOverride.js"></script>
-        <!-- End Other -->
+    <!-- Other -->
+    <script src="./assets/js/keyboardOverride.js"></script>
+    <!-- End Other -->
 
-        <!-- AdSense -->
-        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-            (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-        <!-- End AdSense -->
+    <!-- Analytics -->
+    <!-- Global Site Tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106960012-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-        <!-- Analytics -->
-        <!-- Global Site Tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106960012-1"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments)};
-            gtag('js', new Date());
+        function gtag() {
+            dataLayer.push(arguments)
+        };
+        gtag('js', new Date());
 
-            gtag('config', 'UA-106960012-1');
-        </script>
-        <!-- End Analytics -->
-    </body>
+        gtag('config', 'UA-106960012-1');
+    </script>
+    <!-- End Analytics -->
+</body>
+
 </html>
